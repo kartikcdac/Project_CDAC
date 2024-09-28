@@ -1,0 +1,561 @@
+--Primary Keys - new
+
+ALTER TABLE "Sales"."SalesOrderDetail" 
+    ADD CONSTRAINT "PK_SalesOrderDetail_SalesOrderID_SalesOrderDetailID" PRIMARY KEY ("SalesOrderID", "SalesOrderDetailID");
+
+ALTER TABLE "Sales"."SalesOrderHeader" 
+    ADD CONSTRAINT "PK_SalesOrderHeader_SalesOrderID" PRIMARY KEY ("SalesOrderID");
+
+ALTER TABLE "Sales"."SalesOrderHeaderSalesReason" 
+    ADD CONSTRAINT "PK_SalesOrderHeaderSalesReason_SalesOrderID_SalesReasonID" PRIMARY KEY ("SalesOrderID", "SalesReasonID");
+
+ALTER TABLE "Sales"."SalesPersonQuotaHistory" 
+    ADD CONSTRAINT "PK_SalesPersonQuotaHistory_BusinessEntityID_QuotaDate" PRIMARY KEY ("BusinessEntityID", "QuotaDate");
+
+ALTER TABLE "Sales"."SalesReason" 
+    ADD CONSTRAINT "PK_SalesReason_SalesReasonID" PRIMARY KEY ("SalesReasonID");
+
+ALTER TABLE "Sales"."SalesTaxRate" 
+    ADD CONSTRAINT "PK_SalesTaxRate_SalesTaxRateID" PRIMARY KEY ("SalesTaxRateID");
+
+ALTER TABLE "Sales"."SalesTerritory" 
+    ADD CONSTRAINT "PK_SalesTerritory_TerritoryID" PRIMARY KEY ("TerritoryID");
+
+ALTER TABLE "Sales"."ShoppingCartItem" 
+    ADD CONSTRAINT "PK_ShoppingCartItem_ShoppingCartItemID" PRIMARY KEY ("ShoppingCartItemID");
+
+ALTER TABLE "Sales"."SpecialOffer" 
+    ADD CONSTRAINT "PK_SpecialOffer_SpecialOfferID" PRIMARY KEY ("SpecialOfferID");
+
+ALTER TABLE "Sales"."SpecialOfferProduct" 
+    ADD CONSTRAINT "PK_SpecialOfferProduct_SpecialOfferID_ProductID" PRIMARY KEY ("SpecialOfferID", "ProductID");
+
+ALTER TABLE "Sales"."Store" 
+    ADD CONSTRAINT "PK_Store_BusinessEntityID" PRIMARY KEY ("BusinessEntityID");
+
+ALTER TABLE "Sales"."CountryRegionCurrency" 
+    ADD CONSTRAINT "PK_CountryRegionCurrency_CountryRegionCode_CurrencyCode" PRIMARY KEY ("CountryRegionCode", "CurrencyCode");
+
+ALTER TABLE "Sales"."CreditCard" 
+    ADD CONSTRAINT "PK_CreditCard_CreditCardID" PRIMARY KEY ("CreditCardID");
+
+ALTER TABLE "Sales"."Currency" 
+    ADD CONSTRAINT "PK_Currency_CurrencyCode" PRIMARY KEY ("CurrencyCode");
+
+ALTER TABLE "Sales"."CurrencyRate" 
+    ADD CONSTRAINT "PK_CurrencyRate_CurrencyRateID" PRIMARY KEY ("CurrencyRateID");
+
+ALTER TABLE "Sales"."Customer" 
+    ADD CONSTRAINT "PK_Customer_CustomerID" PRIMARY KEY ("CustomerID");
+
+ALTER TABLE "Sales"."PersonCreditCard" 
+    ADD CONSTRAINT "PK_PersonCreditCard_BusinessEntityID_CreditCardID" PRIMARY KEY ("BusinessEntityID", "CreditCardID");
+
+ALTER TABLE "Sales"."SalesPerson" 
+    ADD CONSTRAINT "PK_SalesPerson_BusinessEntityID" PRIMARY KEY ("BusinessEntityID");
+
+ALTER TABLE "Sales"."SalesTerritoryHistory" 
+    ADD CONSTRAINT "PK_SalesTerritoryHistory_BusinessEntityID_StartDate_TerritoryID" PRIMARY KEY ("BusinessEntityID", "StartDate", "TerritoryID");
+
+ALTER TABLE "Purchasing"."ProductVendor" 
+    ADD CONSTRAINT "PK_ProductVendor_ProductID_BusinessEntityID" PRIMARY KEY ("ProductID", "BusinessEntityID");
+
+ALTER TABLE "Purchasing"."PurchaseOrderDetail" 
+    ADD CONSTRAINT "PK_PurchaseOrderDetail_PurchaseOrderID_PurchaseOrderDetailID" PRIMARY KEY ("PurchaseOrderID", "PurchaseOrderDetailID");
+
+ALTER TABLE "Purchasing"."PurchaseOrderHeader" 
+    ADD CONSTRAINT "PK_PurchaseOrderHeader_PurchaseOrderID" PRIMARY KEY ("PurchaseOrderID");
+
+ALTER TABLE "Purchasing"."ShipMethod" 
+    ADD CONSTRAINT "PK_ShipMethod_ShipMethodID" PRIMARY KEY ("ShipMethodID");
+
+ALTER TABLE "Purchasing"."Vendor" 
+    ADD CONSTRAINT "PK_Vendor_BusinessEntityID" PRIMARY KEY ("BusinessEntityID");
+
+ALTER TABLE "Production"."Location" 
+    ADD CONSTRAINT "PK_Location_LocationID" PRIMARY KEY ("LocationID");
+
+ALTER TABLE "Production"."ScrapReason" 
+    ADD CONSTRAINT "PK_ScrapReason_ScrapReasonID" PRIMARY KEY ("ScrapReasonID");
+
+ALTER TABLE "Production"."UnitMeasure" 
+    ADD CONSTRAINT "PK_UnitMeasure_UnitMeasureCode" PRIMARY KEY ("UnitMeasureCode");
+
+ALTER TABLE "Production"."WorkOrder" 
+    ADD CONSTRAINT "PK_WorkOrder_WorkOrderID" PRIMARY KEY ("WorkOrderID");
+
+ALTER TABLE "Production"."WorkOrderRouting" 
+    ADD CONSTRAINT "PK_WorkOrderRouting_WorkOrderID_ProductID_OperationSequence" PRIMARY KEY ("WorkOrderID", "ProductID", "OperationSequence");
+
+ALTER TABLE "Production"."BillOfMaterials" 
+    ADD CONSTRAINT "PK_BillOfMaterials_BillOfMaterialsID" PRIMARY KEY ("BillOfMaterialsID");
+
+ALTER TABLE "Production"."Culture" 
+    ADD CONSTRAINT "PK_Culture_CultureID" PRIMARY KEY ("CultureID");
+
+ALTER TABLE "Production"."Product" 
+    ADD CONSTRAINT "PK_Product_ProductID" PRIMARY KEY ("ProductID");
+
+ALTER TABLE "Production"."ProductCategory" 
+    ADD CONSTRAINT "PK_ProductCategory_ProductCategoryID" PRIMARY KEY ("ProductCategoryID");
+
+ALTER TABLE "Production"."ProductSubCategory" 
+    ADD CONSTRAINT "PK_ProductSubCategory_ProductSubCategoryID" PRIMARY KEY ("ProductSubcategoryID");
+
+ALTER TABLE "Production"."ProductCostHistory" 
+    ADD CONSTRAINT "PK_ProductCostHistory_ProductID_StartDate" PRIMARY KEY ("ProductID", "StartDate");
+
+ALTER TABLE "Production"."ProductDescription" 
+    ADD CONSTRAINT "PK_ProductDescription_ProductDescriptionID" PRIMARY KEY ("ProductDescriptionID");
+
+ALTER TABLE "Production"."ProductListPriceHistory" 
+    ADD CONSTRAINT "PK_ProductListPriceHistory_ProductID_StartDate" PRIMARY KEY ("ProductID", "StartDate");
+
+ALTER TABLE "Production"."ProductModel" 
+    ADD CONSTRAINT "PK_ProductModel_ProductModelID" PRIMARY KEY ("ProductModelID");
+
+ALTER TABLE "Production"."ProductReview" 
+    ADD CONSTRAINT "PK_ProductReview_ProductReviewID" PRIMARY KEY ("ProductReviewID");
+
+ALTER TABLE "Person"."StateProvince" 
+    ADD CONSTRAINT "PK_StateProvince_StateProvinceID" PRIMARY KEY ("StateProvinceID");
+
+ALTER TABLE "Person"."Address" 
+    ADD CONSTRAINT "PK_Address_AddressID" PRIMARY KEY ("AddressID");
+
+ALTER TABLE "Person"."AddressType" 
+    ADD CONSTRAINT "PK_AddressType_AddressTypeID" PRIMARY KEY ("AddressTypeID");
+
+ALTER TABLE "Person"."BusinessEntity" 
+    ADD CONSTRAINT "PK_BusinessEntity_BusinessEntityID" PRIMARY KEY ("BusinessEntityID");
+
+ALTER TABLE "Person"."BusinessEntityAddress" 
+    ADD CONSTRAINT "PK_BusinessEntityAddress_BusinessEntityID_AddressID_AddressTypeID" PRIMARY KEY ("BusinessEntityID", "AddressID", "AddressTypeID");
+
+ALTER TABLE "Person"."BusinessEntityContact" 
+    ADD CONSTRAINT "PK_BusinessEntityContact_BusinessEntityID_PersonID_ContactTypeID" PRIMARY KEY ("BusinessEntityID", "PersonID", "ContactTypeID");
+
+ALTER TABLE "Person"."ContactType" 
+    ADD CONSTRAINT "PK_ContactType_ContactTypeID" PRIMARY KEY ("ContactTypeID");
+
+ALTER TABLE "Person"."CountryRegion" 
+    ADD CONSTRAINT "PK_CountryRegion_CountryRegionCode" PRIMARY KEY ("CountryRegionCode");
+
+ALTER TABLE "Person"."EmailAddress" 
+    ADD CONSTRAINT "PK_EmailAddress_BusinessEntityID_EmailAddressID" PRIMARY KEY ("BusinessEntityID", "EmailAddressID");
+
+ALTER TABLE "Person"."Password" 
+    ADD CONSTRAINT "PK_Password_BusinessEntityID" PRIMARY KEY ("BusinessEntityID");
+
+ALTER TABLE "Person"."Person" 
+    ADD CONSTRAINT "PK_Person_BusinessEntityID" PRIMARY KEY ("BusinessEntityID");
+
+ALTER TABLE "Person"."PersonPhone" 
+    ADD CONSTRAINT "PK_PersonPhone_BusinessEntityID_PhoneNumber_PhoneNumberTypeID" PRIMARY KEY ("BusinessEntityID", "PhoneNumber", "PhoneNumberTypeID");
+
+ALTER TABLE "Person"."PhoneNumberType" 
+    ADD CONSTRAINT "PK_PhoneNumberType_PhoneNumberTypeID" PRIMARY KEY ("PhoneNumberTypeID");
+
+ALTER TABLE "HumanResources"."Shift" 
+    ADD CONSTRAINT "PK_Shift_ShiftID" PRIMARY KEY ("ShiftID");
+
+ALTER TABLE "HumanResources"."Department" 
+    ADD CONSTRAINT "PK_Department_DepartmentID" PRIMARY KEY ("DepartmentID");
+
+ALTER TABLE "HumanResources"."Employee" 
+    ADD CONSTRAINT "PK_Employee_BusinessEntityID" PRIMARY KEY ("BusinessEntityID");
+
+ALTER TABLE "HumanResources"."EmployeeDepartmentHistory" 
+    ADD CONSTRAINT "PK_EmployeeDepartmentHistory_BusinessEntityID_StartDate_DepartmentID_ShiftID" PRIMARY KEY ("BusinessEntityID", "StartDate", "DepartmentID", "ShiftID");
+
+ALTER TABLE "HumanResources"."EmployeePayHistory" 
+    ADD CONSTRAINT "PK_EmployeePayHistory_BusinessEntityID_RateChangeDate" PRIMARY KEY ("BusinessEntityID", "RateChangeDate");
+
+ALTER TABLE "HumanResources"."JobCandidate" 
+    ADD CONSTRAINT "PK_JobCandidate_JobCandidateID" PRIMARY KEY ("JobCandidateID");
+
+
+--Foreign Keys - OLD
+
+-- Adding a foreign key constraint to the "Person"."Address" table
+ALTER TABLE "Person"."Address" 
+ADD CONSTRAINT "FK_Address_StateProvince_StateProvinceID" 
+FOREIGN KEY ("StateProvinceID") 
+REFERENCES "Person"."StateProvince" ("StateProvinceID");
+
+-- Adding foreign key constraints to the "Production"."BillOfMaterials" table
+ALTER TABLE "Production"."BillOfMaterials"
+ALTER COLUMN "ProductAssemblyID" TYPE bigint
+USING "ProductAssemblyID"::bigint;
+ALTER TABLE "Production"."BillOfMaterials" 
+ADD CONSTRAINT "FK_BillOfMaterials_Product_ProductAssemblyID" 
+FOREIGN KEY ("ProductAssemblyID") 
+REFERENCES "Production"."Product" ("ProductID"),
+ADD CONSTRAINT "FK_BillOfMaterials_Product_ComponentID" 
+FOREIGN KEY ("ComponentID") 
+REFERENCES "Production"."Product" ("ProductID"),
+ADD CONSTRAINT "FK_BillOfMaterials_UnitMeasure_UnitMeasureCode" 
+FOREIGN KEY ("UnitMeasureCode") 
+REFERENCES "Production"."UnitMeasure" ("UnitMeasureCode");
+
+-- Adding foreign key constraints to the "Person"."BusinessEntityAddress" table
+ALTER TABLE "Person"."BusinessEntityAddress" 
+ADD CONSTRAINT "FK_BusinessEntityAddress_Address_AddressID" 
+FOREIGN KEY ("AddressID") 
+REFERENCES "Person"."Address" ("AddressID"),
+ADD CONSTRAINT "FK_BusinessEntityAddress_AddressType_AddressTypeID" 
+FOREIGN KEY ("AddressTypeID") 
+REFERENCES "Person"."AddressType" ("AddressTypeID"),
+ADD CONSTRAINT "FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."BusinessEntity" ("BusinessEntityID");
+
+-- Adding foreign key constraints to the "Person"."BusinessEntityContact" table
+ALTER TABLE "Person"."BusinessEntityContact" 
+ADD CONSTRAINT "FK_BusinessEntityContact_Person_PersonID" 
+FOREIGN KEY ("PersonID") 
+REFERENCES "Person"."Person" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_BusinessEntityContact_ContactType_ContactTypeID" 
+FOREIGN KEY ("ContactTypeID") 
+REFERENCES "Person"."ContactType" ("ContactTypeID"),
+ADD CONSTRAINT "FK_BusinessEntityContact_BusinessEntity_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."BusinessEntity" ("BusinessEntityID");
+
+-- Adding foreign key constraints to the "Sales"."CountryRegionCurrency" table
+ALTER TABLE "Sales"."CountryRegionCurrency" 
+ADD CONSTRAINT "FK_CountryRegionCurrency_CountryRegion_CountryRegionCode" 
+FOREIGN KEY ("CountryRegionCode") 
+REFERENCES "Person"."CountryRegion" ("CountryRegionCode"),
+ADD CONSTRAINT "FK_CountryRegionCurrency_Currency_CurrencyCode" 
+FOREIGN KEY ("CurrencyCode") 
+REFERENCES "Sales"."Currency" ("CurrencyCode");
+
+-- Adding foreign key constraints to the "Sales"."CurrencyRate" table
+ALTER TABLE "Sales"."CurrencyRate" 
+ADD CONSTRAINT "FK_CurrencyRate_Currency_FromCurrencyCode" 
+FOREIGN KEY ("FromCurrencyCode") 
+REFERENCES "Sales"."Currency" ("CurrencyCode"),
+ADD CONSTRAINT "FK_CurrencyRate_Currency_ToCurrencyCode" 
+FOREIGN KEY ("ToCurrencyCode") 
+REFERENCES "Sales"."Currency" ("CurrencyCode");
+
+-- Adding foreign key constraints to the "Sales"."Customer" table
+ALTER TABLE "Sales"."Customer"
+ALTER COLUMN "PersonID" TYPE bigint
+USING "PersonID"::bigint;
+ALTER TABLE "Sales"."Customer"
+ALTER COLUMN "StoreID" TYPE bigint
+USING "StoreID"::bigint;
+ALTER TABLE "Sales"."Customer" 
+ADD CONSTRAINT "FK_Customer_Person_PersonID" 
+FOREIGN KEY ("PersonID") 
+REFERENCES "Person"."Person" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_Customer_Store_StoreID" 
+FOREIGN KEY ("StoreID") 
+REFERENCES "Sales"."Store" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_Customer_SalesTerritory_TerritoryID" 
+FOREIGN KEY ("TerritoryID") 
+REFERENCES "Sales"."SalesTerritory" ("TerritoryID");
+
+-- Adding a foreign key constraint to the "Person"."EmailAddress" table
+ALTER TABLE "Person"."EmailAddress" 
+ADD CONSTRAINT "FK_EmailAddress_Person_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."Person" ("BusinessEntityID");
+
+-- Adding a foreign key constraint to the "HumanResources"."Employee" table
+ALTER TABLE "HumanResources"."Employee" 
+ADD CONSTRAINT "FK_Employee_Person_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."Person" ("BusinessEntityID");
+
+-- Adding foreign key constraints to the "HumanResources"."EmployeeDepartmentHistory" table
+ALTER TABLE "HumanResources"."EmployeeDepartmentHistory" 
+ADD CONSTRAINT "FK_EmployeeDepartmentHistory_Department_DepartmentID" 
+FOREIGN KEY ("DepartmentID") 
+REFERENCES "HumanResources"."Department" ("DepartmentID"),
+ADD CONSTRAINT "FK_EmployeeDepartmentHistory_Employee_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "HumanResources"."Employee" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_EmployeeDepartmentHistory_Shift_ShiftID" 
+FOREIGN KEY ("ShiftID") 
+REFERENCES "HumanResources"."Shift" ("ShiftID");
+
+-- Adding foreign key constraint to the "HumanResources"."EmployeePayHistory" table
+ALTER TABLE "HumanResources"."EmployeePayHistory" 
+ADD CONSTRAINT "FK_EmployeePayHistory_Employee_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "HumanResources"."Employee" ("BusinessEntityID");
+
+-- Adding foreign key constraint to the "HumanResources"."JobCandidate" table
+ALTER TABLE "HumanResources"."JobCandidate"
+ALTER COLUMN "BusinessEntityID" TYPE bigint
+USING "BusinessEntityID"::bigint;
+ALTER TABLE "HumanResources"."JobCandidate" 
+ADD CONSTRAINT "FK_JobCandidate_Employee_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "HumanResources"."Employee" ("BusinessEntityID");
+
+-- Adding foreign key constraint to the "Person"."Password" table
+ALTER TABLE "Person"."Password" 
+ADD CONSTRAINT "FK_Password_Person_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."Person" ("BusinessEntityID");
+
+-- Adding foreign key constraint to the "Person"."Person" table
+ALTER TABLE "Person"."Person" 
+ADD CONSTRAINT "FK_Person_BusinessEntity_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."BusinessEntity" ("BusinessEntityID");
+
+-- Adding foreign key constraints to the "Sales"."PersonCreditCard" table
+ALTER TABLE "Sales"."PersonCreditCard" 
+ADD CONSTRAINT "FK_PersonCreditCard_Person_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."Person" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_PersonCreditCard_CreditCard_CreditCardID" 
+FOREIGN KEY ("CreditCardID") 
+REFERENCES "Sales"."CreditCard" ("CreditCardID");
+
+-- Adding foreign key constraints to the "Person"."PersonPhone" table
+ALTER TABLE "Person"."PersonPhone" 
+ADD CONSTRAINT "FK_PersonPhone_Person_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."Person" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_PersonPhone_PhoneNumberType_PhoneNumberTypeID" 
+FOREIGN KEY ("PhoneNumberTypeID") 
+REFERENCES "Person"."PhoneNumberType" ("PhoneNumberTypeID");
+
+-- Adding foreign key constraints to the "Production"."Product" table
+ALTER TABLE "Production"."Product"
+ALTER COLUMN "ProductModelID" TYPE bigint
+USING "ProductModelID"::bigint;
+ALTER TABLE "Production"."Product"
+ALTER COLUMN "ProductSubcategoryID" TYPE bigint
+USING "ProductSubcategoryID"::bigint;
+ALTER TABLE "Production"."Product" 
+ADD CONSTRAINT "FK_Product_UnitMeasure_SizeUnitMeasureCode" 
+FOREIGN KEY ("SizeUnitMeasureCode") 
+REFERENCES "Production"."UnitMeasure" ("UnitMeasureCode"),
+ADD CONSTRAINT "FK_Product_UnitMeasure_WeightUnitMeasureCode" 
+FOREIGN KEY ("WeightUnitMeasureCode") 
+REFERENCES "Production"."UnitMeasure" ("UnitMeasureCode"),
+ADD CONSTRAINT "FK_Product_ProductModel_ProductModelID" 
+FOREIGN KEY ("ProductModelID") 
+REFERENCES "Production"."ProductModel" ("ProductModelID"),
+ADD CONSTRAINT "FK_Product_ProductSubCategory_ProductSubCategoryID" 
+FOREIGN KEY ("ProductSubcategoryID") 
+REFERENCES "Production"."ProductSubCategory" ("ProductSubcategoryID");
+
+-- Adding foreign key constraint to the "Production"."ProductCostHistory" table
+ALTER TABLE "Production"."ProductCostHistory" 
+ADD CONSTRAINT "FK_ProductCostHistory_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID");
+
+
+-- Adding foreign key constraints to the "Production"."ProductInventory" table
+ALTER TABLE "Production"."ProductInventory" 
+ADD CONSTRAINT "FK_ProductInventory_Location_LocationID" 
+FOREIGN KEY ("LocationID") 
+REFERENCES "Production"."Location" ("LocationID"),
+ADD CONSTRAINT "FK_ProductInventory_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID");
+
+-- Adding foreign key constraint to the "Production"."ProductListPriceHistory" table
+ALTER TABLE "Production"."ProductListPriceHistory" 
+ADD CONSTRAINT "FK_ProductListPriceHistory_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID");
+
+-- Adding foreign key constraints to the "Production"."ProductModelIllustration" table
+ALTER TABLE "Production"."ProductModelIllustration" 
+ADD CONSTRAINT "FK_ProductModelIllustration_ProductModel_ProductModelID" 
+FOREIGN KEY ("ProductModelID") 
+REFERENCES "Production"."ProductModel" ("ProductModelID");
+
+
+-- Adding foreign key constraint to the "Production"."ProductReview" table
+ALTER TABLE "Production"."ProductReview" 
+ADD CONSTRAINT "FK_ProductReview_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID");
+
+-- Adding foreign key constraint to the "Production"."ProductSubcategory" table
+ALTER TABLE "Production"."ProductSubCategory" 
+ADD CONSTRAINT "FK_ProductSubcategory_ProductCategory_ProductCategoryID" 
+FOREIGN KEY ("ProductCategoryID") 
+REFERENCES "Production"."ProductCategory" ("ProductCategoryID");
+
+-- Adding foreign key constraints to the "Purchasing"."ProductVendor" table
+ALTER TABLE "Purchasing"."ProductVendor" 
+ADD CONSTRAINT "FK_ProductVendor_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID"),
+ADD CONSTRAINT "FK_ProductVendor_UnitMeasure_UnitMeasureCode" 
+FOREIGN KEY ("UnitMeasureCode") 
+REFERENCES "Production"."UnitMeasure" ("UnitMeasureCode"),
+ADD CONSTRAINT "FK_ProductVendor_Vendor_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Purchasing"."Vendor" ("BusinessEntityID");
+
+-- Adding foreign key constraints to the "Purchasing"."PurchaseOrderDetail" table
+ALTER TABLE "Purchasing"."PurchaseOrderDetail" 
+ADD CONSTRAINT "FK_PurchaseOrderDetail_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID"),
+ADD CONSTRAINT "FK_PurchaseOrderDetail_PurchaseOrderHeader_PurchaseOrderID" 
+FOREIGN KEY ("PurchaseOrderID") 
+REFERENCES "Purchasing"."PurchaseOrderHeader" ("PurchaseOrderID");
+
+-- Adding foreign key constraints to the "Sales"."SalesOrderDetail" table
+ALTER TABLE "Sales"."SalesOrderDetail" 
+ADD CONSTRAINT "FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID" 
+FOREIGN KEY ("SalesOrderID") 
+REFERENCES "Sales"."SalesOrderHeader" ("SalesOrderID") 
+ON DELETE CASCADE,
+ADD CONSTRAINT "FK_SalesOrderDetail_SpecialOfferProduct_SpecialOfferIDProductID" 
+FOREIGN KEY ("SpecialOfferID", "ProductID") 
+REFERENCES "Sales"."SpecialOfferProduct" ("SpecialOfferID", "ProductID");
+
+-- Adding foreign key constraints to the "Sales"."SalesOrderHeader" table
+ALTER TABLE "Sales"."SalesOrderHeader"
+ALTER COLUMN "CreditCardID" TYPE bigint
+USING "CreditCardID"::bigint,
+ALTER COLUMN "CurrencyRateID" TYPE bigint
+USING "CurrencyRateID"::bigint,
+ALTER COLUMN "SalesPersonID" TYPE bigint
+USING "SalesPersonID"::bigint;
+ALTER TABLE "Sales"."SalesOrderHeader" 
+ADD CONSTRAINT "FK_SalesOrderHeader_Address_BillToAddressID" 
+FOREIGN KEY ("BillToAddressID") 
+REFERENCES "Person"."Address" ("AddressID"),
+ADD CONSTRAINT "FK_SalesOrderHeader_Address_ShipToAddressID" 
+FOREIGN KEY ("ShipToAddressID") 
+REFERENCES "Person"."Address" ("AddressID"),
+ADD CONSTRAINT "FK_SalesOrderHeader_CreditCard_CreditCardID" 
+FOREIGN KEY ("CreditCardID") 
+REFERENCES "Sales"."CreditCard" ("CreditCardID"),
+ADD CONSTRAINT "FK_SalesOrderHeader_CurrencyRate_CurrencyRateID" 
+FOREIGN KEY ("CurrencyRateID") 
+REFERENCES "Sales"."CurrencyRate" ("CurrencyRateID"),
+ADD CONSTRAINT "FK_SalesOrderHeader_Customer_CustomerID" 
+FOREIGN KEY ("CustomerID") 
+REFERENCES "Sales"."Customer" ("CustomerID"),
+ADD CONSTRAINT "FK_SalesOrderHeader_SalesPerson_SalesPersonID" 
+FOREIGN KEY ("SalesPersonID") 
+REFERENCES "Sales"."SalesPerson" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_SalesOrderHeader_ShipMethod_ShipMethodID" 
+FOREIGN KEY ("ShipMethodID") 
+REFERENCES "Purchasing"."ShipMethod" ("ShipMethodID"),
+ADD CONSTRAINT "FK_SalesOrderHeader_SalesTerritory_TerritoryID" 
+FOREIGN KEY ("TerritoryID") 
+REFERENCES "Sales"."SalesTerritory" ("TerritoryID");
+
+-- Adding foreign key constraints to the "Sales"."SalesOrderHeaderSalesReason" table
+ALTER TABLE "Sales"."SalesOrderHeaderSalesReason" 
+ADD CONSTRAINT "FK_SalesOrderHeaderSalesReason_SalesReason_SalesReasonID" 
+FOREIGN KEY ("SalesReasonID") 
+REFERENCES "Sales"."SalesReason" ("SalesReasonID"),
+ADD CONSTRAINT "FK_SalesOrderHeaderSalesReason_SalesOrderHeader_SalesOrderID" 
+FOREIGN KEY ("SalesOrderID") 
+REFERENCES "Sales"."SalesOrderHeader" ("SalesOrderID") 
+ON DELETE CASCADE;
+
+-- Adding foreign key constraints to the "Sales"."SalesPerson" table
+ALTER TABLE "Sales"."SalesPerson"
+ALTER COLUMN "TerritoryID" TYPE bigint
+USING "TerritoryID"::bigint;
+ALTER TABLE "Sales"."SalesPerson" 
+ADD CONSTRAINT "FK_SalesPerson_Employee_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "HumanResources"."Employee" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_SalesPerson_SalesTerritory_TerritoryID" 
+FOREIGN KEY ("TerritoryID") 
+REFERENCES "Sales"."SalesTerritory" ("TerritoryID");
+
+-- Adding foreign key constraint to the "Sales"."SalesPersonQuotaHistory" table
+ALTER TABLE "Sales"."SalesPersonQuotaHistory" 
+ADD CONSTRAINT "FK_SalesPersonQuotaHistory_SalesPerson_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Sales"."SalesPerson" ("BusinessEntityID");
+
+-- Adding foreign key constraint to the "Sales"."SalesTaxRate" table
+ALTER TABLE "Sales"."SalesTaxRate" 
+ADD CONSTRAINT "FK_SalesTaxRate_StateProvince_StateProvinceID" 
+FOREIGN KEY ("StateProvinceID") 
+REFERENCES "Person"."StateProvince" ("StateProvinceID");
+
+-- Adding foreign key constraint to the "Sales"."SalesTerritory" table
+ALTER TABLE "Sales"."SalesTerritory" 
+ADD CONSTRAINT "FK_SalesTerritory_CountryRegion_CountryRegionCode" 
+FOREIGN KEY ("CountryRegionCode") 
+REFERENCES "Person"."CountryRegion" ("CountryRegionCode");
+
+-- Adding foreign key constraints to the "Sales"."SalesTerritoryHistory" table
+ALTER TABLE "Sales"."SalesTerritoryHistory" 
+ADD CONSTRAINT "FK_SalesTerritoryHistory_SalesPerson_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Sales"."SalesPerson" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_SalesTerritoryHistory_SalesTerritory_TerritoryID" 
+FOREIGN KEY ("TerritoryID") 
+REFERENCES "Sales"."SalesTerritory" ("TerritoryID");
+
+-- Adding foreign key constraint to the "Sales"."ShoppingCartItem" table
+ALTER TABLE "Sales"."ShoppingCartItem" 
+ADD CONSTRAINT "FK_ShoppingCartItem_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID");
+
+-- Adding foreign key constraints to the "Sales"."SpecialOfferProduct" table
+ALTER TABLE "Sales"."SpecialOfferProduct" 
+ADD CONSTRAINT "FK_SpecialOfferProduct_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID"),
+ADD CONSTRAINT "FK_SpecialOfferProduct_SpecialOffer_SpecialOfferID" 
+FOREIGN KEY ("SpecialOfferID") 
+REFERENCES "Sales"."SpecialOffer" ("SpecialOfferID");
+
+-- Adding foreign key constraints to the "Person"."StateProvince" table
+ALTER TABLE "Person"."StateProvince" 
+ADD CONSTRAINT "FK_StateProvince_CountryRegion_CountryRegionCode" 
+FOREIGN KEY ("CountryRegionCode") 
+REFERENCES "Person"."CountryRegion" ("CountryRegionCode"),
+ADD CONSTRAINT "FK_StateProvince_SalesTerritory_TerritoryID" 
+FOREIGN KEY ("TerritoryID") 
+REFERENCES "Sales"."SalesTerritory" ("TerritoryID");
+
+-- Adding foreign key constraints to the "Sales"."Store" table
+ALTER TABLE "Sales"."Store" 
+ADD CONSTRAINT "FK_Store_BusinessEntity_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."BusinessEntity" ("BusinessEntityID"),
+ADD CONSTRAINT "FK_Store_SalesPerson_SalesPersonID" 
+FOREIGN KEY ("SalesPersonID") 
+REFERENCES "Sales"."SalesPerson" ("BusinessEntityID");
+
+-- Adding foreign key constraint to the "Production"."TransactionHistory" table
+ALTER TABLE "Production"."TransactionHistory" 
+ADD CONSTRAINT "FK_TransactionHistory_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID");
+
+-- Adding foreign key constraint to the "Purchasing"."Vendor" table
+ALTER TABLE "Purchasing"."Vendor" 
+ADD CONSTRAINT "FK_Vendor_BusinessEntity_BusinessEntityID" 
+FOREIGN KEY ("BusinessEntityID") 
+REFERENCES "Person"."BusinessEntity" ("BusinessEntityID");
+
+-- Adding foreign key constraints to the "Production"."WorkOrder" table
+ALTER TABLE "Production"."WorkOrder"
+ALTER COLUMN "ScrapReasonID" TYPE bigint
+USING "ScrapReasonID"::bigint;
+ALTER TABLE "Production"."WorkOrder" 
+ADD CONSTRAINT "FK_WorkOrder_Product_ProductID" 
+FOREIGN KEY ("ProductID") 
+REFERENCES "Production"."Product" ("ProductID"),
+ADD CONSTRAINT "FK_WorkOrder_ScrapReason_ScrapReasonID" 
+FOREIGN KEY ("ScrapReasonID") 
+REFERENCES "Production"."ScrapReason" ("ScrapReasonID");
